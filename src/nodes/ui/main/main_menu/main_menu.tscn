@@ -1,0 +1,255 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxtf6a5wubmsm"]
+
+[ext_resource type="Theme" uid="uid://dqi86njy1faai" path="res://assets/themes/terraui.tres" id="1_2colu"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/main_menu/main_menu.gd" id="2_bd1tv"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/button/button.gd" id="3_ednrl"]
+
+[sub_resource type="Animation" id="Animation_tt1yl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PMainMenu/PC/VB/PlayButton:focus_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PMainMenu/PC/VB/SettingsButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PMainMenu/PC/VB/ExitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_nwt5k"]
+resource_name = "appear_menu"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PMainMenu/PC/VB/PlayButton:focus_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PMainMenu/PC/VB/SettingsButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PMainMenu/PC/VB/ExitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 370), Vector2(60, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_i77pl"]
+resource_name = "hide_menu"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PMainMenu/PC/VB/PlayButton:focus_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PMainMenu/PC/VB/SettingsButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PMainMenu/PC/VB/ExitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(60, 370), Vector2(-200, 370)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htymo"]
+_data = {
+"RESET": SubResource("Animation_tt1yl"),
+"appear": SubResource("Animation_nwt5k"),
+"hide": SubResource("Animation_i77pl")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "exit_button", "ap_main_menu")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -200.0
+offset_top = 370.0
+offset_right = -200.0
+offset_bottom = 370.0
+script = ExtResource("2_bd1tv")
+play_button = NodePath("PMainMenu/PC/VB/PlayButton")
+settings_button = NodePath("PMainMenu/PC/VB/SettingsButton")
+exit_button = NodePath("PMainMenu/PC/VB/ExitButton")
+ap_main_menu = NodePath("APMainMenu")
+
+[node name="PMainMenu" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 180.0
+theme = ExtResource("1_2colu")
+
+[node name="PC" type="PanelContainer" parent="PMainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -57.5
+offset_right = 56.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="PMainMenu/PC"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="PMainMenu/PC/VB"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../ExitButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath("../ExitButton")
+focus_mode = 0
+text = "Play"
+script = ExtResource("3_ednrl")
+
+[node name="SettingsButton" type="Button" parent="PMainMenu/PC/VB"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../PlayButton")
+focus_mode = 0
+text = "Settings"
+script = ExtResource("3_ednrl")
+
+[node name="ExitButton" type="Button" parent="PMainMenu/PC/VB"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../SettingsButton")
+focus_mode = 0
+text = "Exit"
+script = ExtResource("3_ednrl")
+
+[node name="APMainMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_htymo")
+}
+
+[connection signal="gui_input" from="PMainMenu/PC/VB/PlayButton" to="PMainMenu/PC/VB/PlayButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PMainMenu/PC/VB/PlayButton" to="PMainMenu/PC/VB/PlayButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PMainMenu/PC/VB/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="gui_input" from="PMainMenu/PC/VB/SettingsButton" to="PMainMenu/PC/VB/SettingsButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PMainMenu/PC/VB/SettingsButton" to="PMainMenu/PC/VB/SettingsButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PMainMenu/PC/VB/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="gui_input" from="PMainMenu/PC/VB/ExitButton" to="PMainMenu/PC/VB/ExitButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PMainMenu/PC/VB/ExitButton" to="PMainMenu/PC/VB/ExitButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PMainMenu/PC/VB/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="APMainMenu" to="." method="_on_ap_main_menu_animation_finished"]

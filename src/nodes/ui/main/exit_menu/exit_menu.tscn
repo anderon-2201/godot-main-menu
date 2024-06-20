@@ -1,0 +1,283 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl3bo0a4i685g"]
+
+[ext_resource type="Theme" uid="uid://dqi86njy1faai" path="res://assets/themes/terraui.tres" id="1_gk8ay"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/button/button.gd" id="2_djwhm"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/exit_menu/exit_menu.gd" id="2_ytdqa"]
+
+[sub_resource type="Animation" id="Animation_bmndx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PExitMenu/PC/VB/CancelButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PExitMenu/PC/VB/QuitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PExitMenu/PC/VB/CancelButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PExitMenu/PC/VB/QuitButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gf8uq"]
+resource_name = "appear_menu"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PExitMenu/PC/VB/CancelButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PExitMenu/PC/VB/QuitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PExitMenu/PC/VB/CancelButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PExitMenu/PC/VB/QuitButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_00uih"]
+resource_name = "hide_menu"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PExitMenu/PC/VB/CancelButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PExitMenu/PC/VB/QuitButton:focus_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PExitMenu/PC/VB/QuitButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PExitMenu/PC/VB/CancelButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ptefa"]
+_data = {
+"RESET": SubResource("Animation_bmndx"),
+"appear": SubResource("Animation_gf8uq"),
+"hide": SubResource("Animation_00uih")
+}
+
+[node name="ExitMenu" type="Control" node_paths=PackedStringArray("cancel_button", "quit_button", "ap_exit_menu")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -75.0
+offset_right = 90.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gk8ay")
+script = ExtResource("2_ytdqa")
+cancel_button = NodePath("PExitMenu/PC/VB/CancelButton")
+quit_button = NodePath("PExitMenu/PC/VB/QuitButton")
+ap_exit_menu = NodePath("APExitMenu")
+
+[node name="PExitMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="PanelContainer" parent="PExitMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -40.0
+offset_right = 66.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="PExitMenu/PC"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="PExitMenu/PC/VB"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath(".")
+focus_previous = NodePath("../QuitButton")
+focus_mode = 0
+disabled = true
+text = "Cancel"
+script = ExtResource("2_djwhm")
+
+[node name="QuitButton" type="Button" parent="PExitMenu/PC/VB"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../CancelButton")
+focus_next = NodePath("../CancelButton")
+focus_mode = 0
+disabled = true
+text = "Quit"
+script = ExtResource("2_djwhm")
+
+[node name="APExitMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ptefa")
+}
+
+[connection signal="gui_input" from="PExitMenu/PC/VB/CancelButton" to="PExitMenu/PC/VB/CancelButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PExitMenu/PC/VB/CancelButton" to="PExitMenu/PC/VB/CancelButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PExitMenu/PC/VB/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="gui_input" from="PExitMenu/PC/VB/QuitButton" to="PExitMenu/PC/VB/QuitButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PExitMenu/PC/VB/QuitButton" to="PExitMenu/PC/VB/QuitButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PExitMenu/PC/VB/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="animation_finished" from="APExitMenu" to="." method="_on_ap_exit_menu_animation_finished"]

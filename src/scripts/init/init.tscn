@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4bij0olfv1q1"]
+
+[sub_resource type="GDScript" id="GDScript_efyhs"]
+resource_name = "init"
+script/source = "extends Node
+
+@export_category(\"Load Scenes\")
+@export_file(\"*.tscn\") var splash_screen_scene: String = \"res://src/scenes/splashscreen/splash_screen.tscn\"
+@export_file(\"*.tscn\") var main_screen_scene: String = \"res://src/nodes/ui/main/main_control.tscn\"
+
+@export_category(\"Load Splash Screen\")
+@export var load_splash_screen: bool = true
+
+@export_category(\"Load Egg Scene\")
+@export_file(\"*.tscn\") var egg_scene: String
+@export var egg: int
+
+func _ready() -> void:
+	var fun: int = Global.fun()
+	load_scene(select_scene(fun))
+
+func select_scene(_fun) -> String:
+	match _fun:
+		egg:
+			return egg_scene
+		_:
+			if load_splash_screen:
+				return splash_screen_scene
+			else:
+				return main_screen_scene
+
+func  load_scene(_scene) -> void:
+	if _scene:
+		get_tree().call_deferred(\"change_scene_to_file\", _scene)
+	else:
+		print(\"Error: No se encontró la escena\") # TODO: Popup Error
+"
+
+[node name="init" type="Node"]
+script = SubResource("GDScript_efyhs")

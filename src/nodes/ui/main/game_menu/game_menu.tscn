@@ -1,0 +1,336 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1toq82mxuqpv"]
+
+[ext_resource type="Theme" uid="uid://dqi86njy1faai" path="res://assets/themes/terraui.tres" id="1_dcy0q"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/game_menu/game_menu.gd" id="2_3ympe"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/button/button.gd" id="3_v7yva"]
+
+[sub_resource type="Animation" id="Animation_5i5ki"]
+resource_name = "appear"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGroundCR:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.313726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/VB/PGamePause/PC/VC/ResumeButton:focus_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MC/VB/PGamePause/PC/VC/SettingsButton:focus_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MC/VB/PGamePause/PC/VC/ExitButton:focus_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_wwi5c"]
+resource_name = "hide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGroundCR:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.313726), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/VB/PGamePause/PC/VC/ResumeButton:focus_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MC/VB/PGamePause/PC/VC/SettingsButton:focus_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MC/VB/PGamePause/PC/VC/ExitButton:focus_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_gvn6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGroundCR:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/VB/PGamePause/PC/VC/ResumeButton:focus_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MC/VB/PGamePause/PC/VC/SettingsButton:focus_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MC/VB/PGamePause/PC/VC/ExitButton:focus_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yasgn"]
+_data = {
+"RESET": SubResource("Animation_gvn6b"),
+"appear": SubResource("Animation_5i5ki"),
+"hide": SubResource("Animation_wwi5c")
+}
+
+[node name="GameMenu" type="Control" node_paths=PackedStringArray("resume_button", "settings_button", "exit_button", "ap_game_menu")]
+layout_mode = 3
+anchor_left = 0.386875
+anchor_top = 0.325
+anchor_right = 0.613125
+anchor_bottom = 0.675
+offset_left = 0.5
+offset_right = -0.500031
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dcy0q")
+script = ExtResource("2_3ympe")
+resume_button = NodePath("MC/VB/PGamePause/PC/VC/ResumeButton")
+settings_button = NodePath("MC/VB/PGamePause/PC/VC/SettingsButton")
+exit_button = NodePath("MC/VB/PGamePause/PC/VC/ExitButton")
+ap_game_menu = NodePath("APGameMenu")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackGroundCR" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -195.0
+offset_right = 310.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MC" type="MarginContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="PauseLabel" type="Label" parent="MC/VB"]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="PGamePause" type="Panel" parent="MC/VB"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PC" type="PanelContainer" parent="MC/VB/PGamePause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VC" type="VBoxContainer" parent="MC/VB/PGamePause/PC"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="MC/VB/PGamePause/PC/VC"]
+layout_mode = 2
+focus_mode = 0
+text = "Resume"
+script = ExtResource("3_v7yva")
+
+[node name="SettingsButton" type="Button" parent="MC/VB/PGamePause/PC/VC"]
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+script = ExtResource("3_v7yva")
+
+[node name="ExitButton" type="Button" parent="MC/VB/PGamePause/PC/VC"]
+layout_mode = 2
+focus_mode = 0
+text = "Kill me"
+script = ExtResource("3_v7yva")
+
+[node name="APGameMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yasgn")
+}
+
+[connection signal="pressed" from="MC/VB/PGamePause/PC/VC/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MC/VB/PGamePause/PC/VC/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MC/VB/PGamePause/PC/VC/ExitButton" to="." method="_on_exit_button_pressed"]

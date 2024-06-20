@@ -1,0 +1,259 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx0ssnrlpmkqv"]
+
+[ext_resource type="Theme" uid="uid://dqi86njy1faai" path="res://assets/themes/terraui.tres" id="1_rr04g"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/settings_menu/settings_menu.gd" id="2_wukvf"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/button/button.gd" id="3_sbs1i"]
+
+[sub_resource type="Animation" id="Animation_sw5ho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_b15ra"]
+resource_name = "appear"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 100), Vector2(100, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_a2rx7"]
+resource_name = "hide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 100), Vector2(800, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton:focus_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0hq4"]
+_data = {
+"RESET": SubResource("Animation_sw5ho"),
+"appear": SubResource("Animation_b15ra"),
+"hide": SubResource("Animation_a2rx7")
+}
+
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("back_button", "ap_settings_menu")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 800.0
+offset_top = 100.0
+offset_right = 1450.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+focus_neighbor_top = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+focus_neighbor_right = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+focus_neighbor_bottom = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+focus_next = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+focus_previous = NodePath("PC/HBoxContainer/VBoxContainer/BackButton")
+theme = ExtResource("1_rr04g")
+script = ExtResource("2_wukvf")
+back_button = NodePath("PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton")
+ap_settings_menu = NodePath("APSettingsMenu")
+
+[node name="PSettingsMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="PanelContainer" parent="PSettingsMenu"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 635.0
+offset_bottom = 435.0
+
+[node name="MC" type="MarginContainer" parent="PSettingsMenu/PC"]
+layout_mode = 2
+
+[node name="HC" type="HBoxContainer" parent="PSettingsMenu/PC/MC"]
+layout_mode = 2
+
+[node name="MCMenu" type="MarginContainer" parent="PSettingsMenu/PC/MC/HC"]
+layout_mode = 2
+
+[node name="VC" type="VBoxContainer" parent="PSettingsMenu/PC/MC/HC/MCMenu"]
+layout_mode = 2
+
+[node name="SettingsLabel" type="Label" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC"]
+layout_mode = 2
+text = "Settings"
+
+[node name="CC" type="CenterContainer" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VC" type="VBoxContainer" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC"]
+layout_mode = 2
+
+[node name="ReloadButton" type="Button" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../BackButton")
+focus_neighbor_right = NodePath("../../..")
+focus_neighbor_bottom = NodePath("../SaveButton")
+focus_next = NodePath("../SaveButton")
+focus_previous = NodePath("../BackButton")
+text = "Reload"
+script = ExtResource("3_sbs1i")
+
+[node name="SaveButton" type="Button" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../ReloadButton")
+focus_neighbor_right = NodePath("../../..")
+focus_neighbor_bottom = NodePath("../BackButton")
+focus_next = NodePath("../BackButton")
+focus_previous = NodePath("../ReloadButton")
+text = "Save"
+script = ExtResource("3_sbs1i")
+
+[node name="BackButton" type="Button" parent="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC"]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../SaveButton")
+focus_neighbor_right = NodePath("../../..")
+focus_neighbor_bottom = NodePath("../ReloadButton")
+focus_next = NodePath("../ReloadButton")
+focus_previous = NodePath("../SaveButton")
+focus_mode = 0
+text = "Back"
+script = ExtResource("3_sbs1i")
+
+[node name="VSeparator" type="VSeparator" parent="PSettingsMenu/PC/MC/HC"]
+layout_mode = 2
+
+[node name="MCSettings" type="MarginContainer" parent="PSettingsMenu/PC/MC/HC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VB" type="VBoxContainer" parent="PSettingsMenu/PC/MC/HC/MCSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VideoLabel" type="Label" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+text = "Video"
+
+[node name="HB" type="HBoxContainer" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+
+[node name="FullScreenLabel" type="Label" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FullScreen"
+
+[node name="FullScreenCB" type="CheckBox" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB/HB"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../MCMenu/VC/VC/BackButton")
+focus_neighbor_top = NodePath("../../HB2/VolumeHS")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../HB2/VolumeHS")
+focus_next = NodePath("../../HB2/VolumeHS")
+focus_previous = NodePath("../../HB2/VolumeHS")
+
+[node name="HS" type="HSeparator" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+
+[node name="AudioLabel" type="Label" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+text = "Audio"
+
+[node name="HB2" type="HBoxContainer" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB/HB2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volume"
+
+[node name="VolumeHS" type="HSlider" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB/HB2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../../../../MCMenu/VC/VC/BackButton")
+focus_neighbor_top = NodePath("../../HB/FullScreenCB")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../HB/FullScreenCB")
+focus_next = NodePath("../../HB/FullScreenCB")
+focus_previous = NodePath("../../HB/FullScreenCB")
+
+[node name="HS2" type="HSeparator" parent="PSettingsMenu/PC/MC/HC/MCSettings/VB"]
+layout_mode = 2
+
+[node name="APSettingsMenu" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q0hq4")
+}
+
+[connection signal="gui_input" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/ReloadButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/ReloadButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/ReloadButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/ReloadButton" method="_on_mouse_entered"]
+[connection signal="gui_input" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/SaveButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/SaveButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/SaveButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/SaveButton" method="_on_mouse_entered"]
+[connection signal="gui_input" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton" method="_on_gui_input"]
+[connection signal="mouse_entered" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton" to="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="PSettingsMenu/PC/MC/HC/MCMenu/VC/VC/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="animation_finished" from="APSettingsMenu" to="." method="_on_ap_settings_menu_animation_finished"]

@@ -1,0 +1,265 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3ywerrqypnh7"]
+
+[ext_resource type="Theme" uid="uid://dqi86njy1faai" path="res://assets/themes/terraui.tres" id="1_s1ova"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/title_bar/title_bar.gd" id="2_ru01g"]
+[ext_resource type="Script" path="res://src/nodes/ui/main/title_bar/title_bar_panel_container.gd" id="3_v37n2"]
+[ext_resource type="Texture2D" uid="uid://bdxe8g8qvmg0d" path="res://assets/sprites/ui/bar/close-button_0001.png" id="4_bxrpk"]
+[ext_resource type="Texture2D" uid="uid://cli30upf877om" path="res://assets/sprites/ui/bar/hide-button_0001.png" id="5_q7v5t"]
+[ext_resource type="Texture2D" uid="uid://d2r3uweptpehw" path="res://assets/sprites/ui/bar/close-button_0004.png" id="5_w4pmx"]
+[ext_resource type="Texture2D" uid="uid://bpk4bu1x3eswt" path="res://assets/sprites/ui/bar/collapse_0002.png" id="8_i38v0"]
+[ext_resource type="Texture2D" uid="uid://cblegbfsy5nx" path="res://assets/sprites/ui/bar/hide-button_0004.png" id="8_jtec4"]
+[ext_resource type="Texture2D" uid="uid://vgjikk7wc8ge" path="res://assets/sprites/ui/bar/collapse_0001.png" id="8_tgj10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7upa"]
+bg_color = Color(0.176471, 0.0862745, 0.313726, 1)
+
+[sub_resource type="Animation" id="Animation_72low"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PTitleBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC/HC/AppearBarTB:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/HC/AppearBarTB:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jatxc"]
+resource_name = "appear"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PTitleBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -35), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC/HC/AppearBarTB:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 0), Vector2(10, 35)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/HC/AppearBarTB:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_b20pe"]
+resource_name = "hide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PTitleBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MC/HC/AppearBarTB:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.156863)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MC:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 35), Vector2(10, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MC/HC/AppearBarTB:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3jxu"]
+_data = {
+"RESET": SubResource("Animation_72low"),
+"appear": SubResource("Animation_jatxc"),
+"hide": SubResource("Animation_b20pe")
+}
+
+[node name="TitleBar" type="Control" node_paths=PackedStringArray("ap_title_bar")]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 35.0
+grow_horizontal = 2
+script = ExtResource("2_ru01g")
+ap_title_bar = NodePath("APTitleBar")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 790.0
+offset_bottom = 70.0
+
+[node name="HC" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+alignment = 2
+
+[node name="AppearBarTB" type="TextureButton" parent="MC/HC"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+focus_mode = 0
+disabled = true
+texture_normal = ExtResource("8_i38v0")
+stretch_mode = 3
+
+[node name="PTitleBar" type="Panel" parent="."]
+layout_mode = 0
+offset_top = -35.0
+offset_right = 800.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7upa")
+
+[node name="PC" type="PanelContainer" parent="PTitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s1ova")
+script = ExtResource("3_v37n2")
+
+[node name="HC" type="HBoxContainer" parent="PTitleBar/PC"]
+layout_mode = 2
+
+[node name="CloseTB" type="TextureButton" parent="PTitleBar/PC/HC"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("4_bxrpk")
+texture_hover = ExtResource("5_w4pmx")
+stretch_mode = 3
+
+[node name="HideTB" type="TextureButton" parent="PTitleBar/PC/HC"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("5_q7v5t")
+texture_hover = ExtResource("8_jtec4")
+stretch_mode = 3
+
+[node name="TitleLabel" type="Label" parent="PTitleBar/PC/HC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Window"
+horizontal_alignment = 1
+
+[node name="HideBarTB" type="TextureButton" parent="PTitleBar/PC/HC"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("8_tgj10")
+stretch_mode = 3
+
+[node name="APTitleBar" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o3jxu")
+}
+
+[connection signal="pressed" from="MC/HC/AppearBarTB" to="." method="_on_appear_bar_tb_pressed"]
+[connection signal="gui_input" from="PTitleBar/PC" to="PTitleBar/PC" method="_on_gui_input"]
+[connection signal="pressed" from="PTitleBar/PC/HC/CloseTB" to="." method="_on_close_tb_pressed"]
+[connection signal="pressed" from="PTitleBar/PC/HC/HideTB" to="." method="_on_hide_tb_pressed"]
+[connection signal="pressed" from="PTitleBar/PC/HC/HideBarTB" to="." method="_on_hide_bar_tb_pressed"]
